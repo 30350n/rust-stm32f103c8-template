@@ -1,15 +1,19 @@
 #![no_std]
 #![no_main]
 
-extern crate panic_probe;
-
-extern crate rtt_target;
-use rtt_target::{rtt_init_print, rprintln};
-
+extern crate cortex_m;
 extern crate cortex_m_rt;
-use cortex_m_rt::entry;
+extern crate rtt_target;
+
+extern crate embedded_hal;
+extern crate embedded_time;
 
 extern crate stm32f1xx_hal;
+
+extern crate panic_probe;
+
+use cortex_m_rt::entry;
+use rtt_target::{rtt_init_print, rprintln};
 use stm32f1xx_hal::{pac, prelude::*};
 
 #[entry]
